@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "Simulating Fabrics: A Spring Element Approach"
 date: 2023-01-25
 categories: [Computer Graphics, Simulations]

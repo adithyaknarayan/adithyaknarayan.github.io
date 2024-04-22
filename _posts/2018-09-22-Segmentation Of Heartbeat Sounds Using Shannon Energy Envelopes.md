@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "Segmentation Of Heartbeat Sounds Using Shannon Energy Envelopes"
 date: 2018-09-27
 categories: [Computer Vision, Signals Processing]
