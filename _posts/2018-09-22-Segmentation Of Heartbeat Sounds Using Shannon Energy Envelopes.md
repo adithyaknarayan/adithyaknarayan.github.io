@@ -35,6 +35,9 @@ a[n] = \left (\frac {|f[n]|}{max_{i=1}^{N} |f[n]|} \right )^2
 \end{aligned}$$
 
 where a[n] is the normalized amplitude and f[n] is the input signal to the system.
+<p float="left">
+  <img src="/normalized_signal.webp" width="100" />
+</p>
 
 |Input Signal          |  Normalized Shannon Waveform |
 :-------------------------:|:-------------------------:
