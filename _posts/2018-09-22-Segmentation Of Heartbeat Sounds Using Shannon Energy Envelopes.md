@@ -6,6 +6,8 @@ categories: [Computer Vision, Signals Processing]
 tags: [opencv, matlab, numpy]
 math: true
 img_path: /docs/assets/shannon_energy
+toc:
+  sidebar: left
 ---
 Data pre-processing is often a necessary step when using any signal, It allows us to enhance specific features, get rid of unnecessary ones and most importantly, it allows us to transform the input signal into a form which is easier for us to process.
 

@@ -39,11 +39,10 @@ So, now we know what spring elements are. Let's get into creating one for images
 
 Now we'll define an arbitrary set of constrained points. Of course, usually this corresponds to some sort of mask which will stay constant over time. However, for illustrative purposes, I've taken a sample ring which will move from the top-left corner of the texture to the center of it.
 
-|$I^t$            |  $I^{t+1}$                        |
-:-------------------------:|:-------------------------:
-![Initial Mask](constrained_mask_initial.png)  |  ![Final Mask](constrained_mask_final.png)
-![Initial Mask](constrained_image_initial.png)  |  ![Final Mask](constrained_image_final.png)
-
+|$$I^t$$            |  $$I^{t+1}$$                        |
+:-------------------------:|:-------------------------:|
+| ![Initial Mask](constrained_mask_initial.png)  |  ![Final Mask](constrained_mask_final.png) |
+| ![Initial Mask](constrained_image_initial.png)  |  ![Final Mask](constrained_image_final.png) |
 
 As can be seen, we've copied over the texture within the ring from the top-left of the image to the center. Ideally, what we'd want is for the rest of the pixels in the image to move along with it; behaving like a fabric in the process.
 
@@ -79,10 +78,10 @@ K_f &= \text{spring constant for F-F connections} \nonumber
 
 To illustrate things, lets take a simple system as shown below. Here the points marked in **blue** define our **constrained points** and the points marked in **red** define the **free points** for which their initial point in $I^t$ needs to be solved for. 
 
-|Image Frame|Constrained Points ($C$)        |  Free Points ($F$) |
-:-------------------------:|:-------------------------:|:-------------------------:
-$I^t$|![Initial Mask](constrained_image_initial_red.png)  |  THIS NEEDS TO BE SOLVED FOR
-$I^{t+1}$|![Initial Mask](constrained_image_final_red.png)  |  ![Final Mask](free_image_final_blue.png)
+|Image Frame|Constrained Points ($$C$$)        |  Free Points ($$F$$) |
+|:-------------------------:|:-------------------------:|:-------------------------:
+| $$I^t$$ | ![Initial Mask](constrained_image_initial_red.png)  |  THIS NEEDS TO BE SOLVED FOR |
+| $$I^{t+1}$$ | ![Initial Mask](constrained_image_final_red.png)  |  ![Final Mask](free_image_final_blue.png) |
 
 >Here, $F$ is selected as a random normal distribution of points in 2D space. I used a knob `n_frac` to control the fraction of free points we take to solve. Technically, we could solve for **every** free point, but that's incredibly slow and inefficient (hence why we interpolate at the end). By using `n_frac`, we can take a conveniently small fraction of points that works for larger images (512/1025/etc) with small tradeoffs in warping quality. 
 {: .prompt-info }
@@ -304,6 +303,7 @@ $$E = P_{sa}K_sP_{sa} - P_{sa}K_sP_{sb} - P_{sb}K_sP_{sa} + P_{sb}K_sP_{sb} $$
 
 What we essentailly want to do, is to re-express this into an easily differentiable form $vKv^T$. Additionally, we want $v$ and $K$ to be set up in such a way that $v$ can be seperated into a constrained vector $C$ and a free vector $F$. Similarly, $K$ should also be easily seperable into a free matrix $K_f$ and a contrained matrix $K_c$. A good way to do that is to set up the vectors/matrices as shown below.
 ![K Seperable](K_seperable.png)
+
 _As can be seen, grouping $V$ and $K_s$ in this way allows us to easily seperate them into free and constrained parts. This makes solving for the free points easier._
 
 So to do this, we follow the two steps that I had mentioned above. However, let's inspect the assembly step since this step influences how we group and make the unique vector $v$. To start, assume we already have $v$; a unique set of the shape $N \times 2$ (since 2D space). What we want to do, is for each pair from the expansion of $E$, find the corresponding entry in $K_s$. To illustrate this, let's take the first term in $P_{sa}K_sP_{sa}$.
@@ -325,6 +325,7 @@ A similar process is observed for the second and third terms of $E$ however. To 
 As can be seen, this begins to populate the **non-diagonal** elements of $K$ from $K_s$. Interestingly, the third term $P_{sb}K_sP_{sa}$ is exactly the same except the row and column indices would be flipped. Hence we also arrive at an important conclusion which will be an important sanity check later. The matrix $K$ **must be symmetric along it's major diagonal**. You can see an example of that below (I most certainly did not find an excuse to add this figure because it looked like a dagger from a nostalgic era of 8-bit RPG's).
 
 ![Sparse K Visualized](sparse_k_vis.png)
+
 _Notice that here the matrix is symmetric along it's major diagonal. Additionally, also notice that a majority of the entries are empty (hence its sparsity)._
 
 > Another important thing to note here is the sparsity of $K$. Since $P_{sa}$ and $P_{sb}$ only sample a small fraction of the points in a $H \times W$ image, the resulting points sampled in $K$ will also only be a fraction of the total dimensionality of the matrix. Hence, we will use the [CSR representation](https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.csr_matrix.html) to store K.
