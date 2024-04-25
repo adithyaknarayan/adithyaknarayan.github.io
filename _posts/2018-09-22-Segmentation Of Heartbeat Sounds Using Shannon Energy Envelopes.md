@@ -1,13 +1,12 @@
 ---
-layout: post
+layout: distill
 title: "Segmentation Of Heartbeat Sounds Using Shannon Energy Envelopes"
 date: 2018-09-27
 categories: [Computer Vision, Signals Processing]
 tags: [opencv, matlab, numpy]
 math: true
 img_path: /docs/assets/shannon_energy
-toc:
-  sidebar: left
+
 ---
 Data pre-processing is often a necessary step when using any signal, It allows us to enhance specific features, get rid of unnecessary ones and most importantly, it allows us to transform the input signal into a form which is easier for us to process.
 
@@ -35,9 +34,6 @@ a[n] = \left (\frac {|f[n]|}{max_{i=1}^{N} |f[n]|} \right )^2
 \end{aligned}$$
 
 where a[n] is the normalized amplitude and f[n] is the input signal to the system.
-<p float="left">
-  <img src="/normalized_signal.webp" width="100" />
-</p>
 
 |Input Signal          |  Normalized Shannon Waveform |
 :-------------------------:|:-------------------------:

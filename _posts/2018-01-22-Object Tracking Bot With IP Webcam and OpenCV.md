@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: distill
 title: "Object Tracking Bot With IP Webcam and OpenCV"
 date: 2018-01-01 21:01:00
 categories: [Computer Vision, OpenCV]
