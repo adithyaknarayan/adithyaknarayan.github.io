@@ -1,11 +1,16 @@
 ---
-layout: post
+layout: distill
 title: "Simulating Fabrics: A Spring Element Approach"
 date: 2023-01-25
 categories: [Computer Graphics, Simulations]
 tags: [spring elements, scipy, opencv, numpy]
 math: true
 img_path: /docs/assets/spring_system
+toc:
+    - name: Introduction
+    - name: Spring Elements and FEM?
+    - name: Establishing notation and our point sets
+    - name: Building SES for images
 ---
 # Introduction
 In the era of deep learning and data-driven approaches to computer vision, there's a certain beauty to classical computer vision techniques. This post is about one such idea.
@@ -29,7 +34,8 @@ And finally, why do we call it "spring" elements? Well, once we've divided our s
 
 $$ F_s = -k * \Delta x $$
 
-![Spring Figure](spring_fig.png)
+![Spring Figure](spring_fig.png){:style="display:block; margin-left:auto; margin-right:auto"}
+
 _A triangle element system where the vertices are related by Hooke's Law._
 
 # Building SES for images
