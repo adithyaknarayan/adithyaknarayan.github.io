@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Joined the [Human Sensing Lab](http://www.humansensing.cs.cmu.edu/people) under Prof. Fernando De la Torre.
+Joined the [Human Sensing Lab](http://www.humansensing.cs.cmu.edu/people) under Prof. Fernando De la Torre  .

@@ -10,15 +10,8 @@
   organization={SPIE},
   pdf={https://arxiv.org/abs/2202.13553},
   preview = {Towards-a-device-independent-deep-learning.png},
-}
-
-@article{narayan2021oc11,
-  title={OC11. 02: A multicentre, multi-device validation of a deep learning system for the automated segmentation of fetal brain structures from two-dimensional ultrasound images.},
-  author={Narayan, A and Kaushik, S and Shankar, H and Jain, S and Hegde, N and Vyas, P and Atada, J and Manjushree, SP and Thang, J and Saw, S and others},
-  journal={Ultrasound in Obstetrics \& Gynecology},
-  volume={58},
-  year={2021},
-  pdf={https://obgyn.onlinelibrary.wiley.com/doi/full/10.1002/uog.23853}
+  selected=True,
+  abstract={In this study, we propose a DL based segmentation framework for the automated segmentation of 10 key fetal brain structures from 2 axial planes from fetal brain USG images (2D). We developed a custom U-Net variant that uses inceptionv4 block as a feature extractor and leverages custom domain-specific data augmentation. Quantitatively, the mean (10 structures; test sets 1/2/3/4) Dice-coefficients were: 0.827, 0.802, 0.731, 0.783. Irrespective of the USG device/center, the DL segmentations were qualitatively comparable to their manual segmentations. The proposed DL system offered a promising and generalizable performance (multi-centers, multi-device) and also presents evidence in support of device-induced variation in image quality (a challenge to generalizibility) by using UMAP analysis. }
 }
 
 @inproceedings{shankar2022leveraging,
@@ -30,13 +23,26 @@
   organization={IEEE},
   pdf={https://arxiv.org/abs/2203.14482},
   preview = {Leveraging-clinically-relevant.png},
+  selected=True,
+  abstract={We leveraged clinically relevant biometric constraints (relationship between caliper points) and domain-relevant data augmentation to improve the accuracy of a U-Net DL model (trained/tested on: 596 images, 473 subjects/143 images, 143 subjects). We performed multiple experiments demonstrating the effect of the DL backbone, data augmentation, generalizability and benchmarked against a recent state-of-the-art approach through extensive clinical validation (DL vs. 7 experienced clinicians). For all cases, the mean errors in the placement of the individual caliper points and the computed biometry were comparable to error rates among clinicians. The clinical translation of the proposed framework can assist novice users from low-resource settings in the reliable and standardized assessment of fetal brain sonograms. }
+}
+
+@article{narayan2021oc11,
+  title={OC11. 02: A multicentre, multi-device validation of a deep learning system for the automated segmentation of fetal brain structures from two-dimensional ultrasound images.},
+  author={Narayan, A. and Kaushik, S and Shankar, H and Jain, S and Hegde, N and Vyas, P and Atada, J and Manjushree, SP and Thang, J and Saw, S and others},
+  journal={Ultrasound in Obstetrics \& Gynecology},
+  volume={58},
+  year={2021},
+  pdf={https://obgyn.onlinelibrary.wiley.com/doi/full/10.1002/uog.23853},
+  abstract={We retrospectively obtained 4,190 two-dimensional (2D) ultrasonography (USG) images (1349 pregnancies; TV + TC images) from 3 centres (2 tertiary referral centre [TRC 1,2] + 1 routine imaging centre [RIC]) using 6 ultrasound (USG) devices (GE Voluson: P8,P6,E8,E10,S10; Samsung: HERA W10). A custom U-Net was trained (2744 images from TRC 1 [E8, S10]) on 2D fetal brain images (TV + TC images) and their corresponding manual segmentations to segment 10 key fetal structures (TV + TC planes). We assessed the robustness (operator & centre variability) and generalisability (across devices) of the proposed approach across 4 independent (unseen) test sets. Test set 1 (TRC 1, trained devices): 718 images (E8, S10); test 2 (TRC 1, unseen devices): 192 images (HERA W10, P6, E10); test set 3 (TRC 2, trained device): 378 images (E8), and test set 4 (RIC, unseen device): 158 images (P8). The segmentation performance was qualitatively and quantitatively (Dice coefficient [DC]) assessed.}
 }
 
 @article{shankar2021vp18,
   title={VP18. 02: A deep learning system for the automated calliper placement to measure multiple fetal brain structures from two-dimensional ultrasound images.},
-  author={Shankar, H and Narayan, A and Kaushik, S and Jain, S and Hegde, N and Vyas, P and Atada, J and Manjushree, SP and Thang, J and Saw, S and others},
+  author={Shankar, H and Narayan, A. and Kaushik, S and Jain, S and Hegde, N and Vyas, P and Atada, J and Manjushree, SP and Thang, J and Saw, S and others},
   journal={Ultrasound in Obstetrics \& Gynecology},
   volume={58},
   year={2021},
-  pdf={https://obgyn.onlinelibrary.wiley.com/doi/full/10.1002/uog.24298}
+  pdf={https://obgyn.onlinelibrary.wiley.com/doi/full/10.1002/uog.24298},
+  abstract={From 3 centres (2 tertiary referral centres, 1 routine imaging centre), 1497 (583 pregnancies) TV, and 596 (187 pregnancies) TC plane images were obtained retrospectively using 3 commercial ultrasound devices (GE Voluson E8, S10, P8). The calliper positions (X and Y coordinates) for 6 measurements (TV plane: biparietal diameter [BPD], occipitofrontal diameter [OFD], atrial width [AW]; TC plane: transcerebellar diameter [TCD], cisterna magna size [CMS], nuchal fold thickness [NFT]) provided by fetal medicine specialists (FMS) were used as the gold standard. For each measurement, we trained (1200 images/measurement) a DL system (high-resolution network [HR-Net]) to automatically predict the calliper positions (2 per measurement) using the gold standard dataset, and measurements were computed as the Euclidean distance between them. We assessed the performance (calliper position, measurement) of the DL system (vs. 2 FMS) on an independent (unseen) test set of 145 images (145 pregnancies) by computing the mean Euclidean error (DL system vs. 2 FMS) and the absolute agreement (intraclass correlation coefficients [ICC]; two-way random-effects, average rater) for each measurement.}
 }

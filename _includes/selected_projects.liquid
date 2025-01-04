@@ -1,0 +1,52 @@
+<div class="projects">
+  {% assign selected_projects = site.projects | where: "selected", true %}
+  {% for project in selected_projects %}
+    <div class="project-item" style="display: flex; align-items: center; margin-bottom: 20px;">
+      {% if project.img %}
+        <img src="{{ project.img }}" alt="{{ project.title }}" class="project-image" style="max-width: 250px; height: auto; border-radius: 5px; margin-right: 20px;" />
+      {% endif %}
+      
+      <div class="project-details">
+        <h2>{{ project.title }}</h2>
+        {% if project.authors %}
+          <p style="font-style: italic; margin-top: 5px;">
+            Authors: 
+            {% for author in project.authors %}
+              <a href="{{ author.link }}" target="_blank" style="text-decoration: none; color: blue;">{{ author.name }}</a>{% if forloop.last == false %}, {% endif %}
+            {% endfor %}
+          </p>
+        {% endif %}
+        <p>{{ project.description }}</p>
+
+        <!-- Links section with icons -->
+        <div style="margin-top: 10px; display: flex; gap: 15px;">
+          {% if project.link %}
+            <a href="{{ project.link }}" target="_blank" style="text-decoration: none; color: blue; display: flex; align-items: center;">
+              <i class="fa-solid fa-link" style="margin-right: 5px;"></i> Project URL
+            </a>
+          {% endif %}
+          {% if project.page %}
+            <a href="{{ project.page }}" target="_blank" style="text-decoration: none; color: blue; display: flex; align-items: center;">
+              <i class="fa-solid fa-file" style="margin-right: 5px;"></i> Project Page
+            </a>
+          {% endif %}
+          {% if project.github %}
+            <a href="{{ project.github }}" target="_blank" style="text-decoration: none; color: blue; display: flex; align-items: center;">
+              <i class="fa-brands fa-github" style="margin-right: 5px;"></i> GitHub Code
+            </a>
+          {% endif %}
+          {% if project.slides %}
+            <a href="{{ project.slides }}" target="_blank" style="text-decoration: none; color: blue; display: flex; align-items: center;">
+              <i class="fa-brands fa-google" style="margin-right: 5px;"></i> Google Slides
+            </a>
+          {% endif %}
+          {% if project.pdf %}
+            <a href="{{ project.pdf }}" target="_blank" style="text-decoration: none; color: blue; display: flex; align-items: center;">
+              <i class="fa-solid fa-file-pdf" style="margin-right: 5px;"></i> Report
+            </a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
