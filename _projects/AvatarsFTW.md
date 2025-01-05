@@ -1,7 +1,8 @@
 ---
 layout: page
 title: "AvatarsFTW: 3D Human Avatars From The Wild"
-description: Occlusion robust 3D human avatars from dynamically posed, in the wild images.
+description: We present a two-part pipeline combining inpainting and body fitting to address 3D human reconstruction challenges, achieving seamless occlusion removal, plausible human reconstruction, and improved mesh fitting for dynamic poses.
+abstract: We propose a two-part, inpainting and body fitting pipeline that alleviates 3D human reconstruction issues with human-object interactions, occlusions, and dynamic poses. The inpainting pipeline uses keypoint detection and a novel keypoint estimation technique, uses LaMa for occluding object removal, Stable Diffusion with ControlNets for generation of missing areas, and a GAN inversion step to create a seamless, plausible human reconstruction. The body fitting pipeline uses an improved regressor and adds more losses to the iterative fitting stage to achieve a better human mesh fit in dynamic poses. The figure above demonstrates our work's ability to inpaint human images, generate improved meshes for incomplete images, and fit better human meshes to a variety of highly dynamic poses.
 img: assets/img/projects/AvatarsFTW/animation1.gif
 redirect: https://www.kaustavmukherjee.com/AvatarsFTWPage/
 importance: 1
@@ -12,11 +13,11 @@ page: https://www.kaustavmukherjee.com/AvatarsFTWPage/
 slides: https://docs.google.com/presentation/d/1_AaUpezlMnlBJ_BsKAjCmeMBlCq-SAUWENb9bSGP9CM/edit#slide=id.p
 pdf: https://www.kaustavmukherjee.com/AvatarsFTWPage/static/pdfs/AvatarFTW_Report.pdf
 authors:
-  - name: "Adithya Narayan*"
+  - name: "Adithya Narayan"
     link: "https://adithyaknarayan.github.io/"
-  - name: "Kaustav Mukherjee*"
+  - name: "Kaustav Mukherjee"
     link: "http://www.kaustavmukherjee.com/"
-  - name: "Shaurye Aggarwal*"
+  - name: "Shaurye Aggarwal"
     link: "https://www.linkedin.com/in/shaurye-aggarwal-3a8560b9" 
 ---
 
