@@ -2,7 +2,12 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='mailto:anaraya2@cs.cmu.edu'>Email 1</a> | <a href='mailto:adithya.narayan943@gmail.com'>Email 2</a> | <a href='https://www.linkedin.com/in/adithya-n-b637b8146/'>Linkedin</a> | <a href='/cv/'>Resume</a> | <a href='https://github.com/adithyaknarayan'>Github</a>
+subtitle: >
+  MSc in Computer Vision @ Carnegie Mellon University · Human Sensing Lab · Pittsburgh, PA<br>
+  <a class="btn btn-sm btn-outline-primary" href="/cv/">CV</a>
+  <a class="btn btn-sm btn-outline-primary" href="https://scholar.google.com/citations?user=hN3nsd4AAAAJ&hl=en" target="_blank" rel="noopener">Scholar</a>
+  <a class="btn btn-sm btn-outline-primary" href="https://github.com/adithyaknarayan" target="_blank" rel="noopener">GitHub</a>
+  <a class="btn btn-sm btn-outline-primary" href="mailto:anaraya2@cs.cmu.edu">Email</a>
 
 profile:
   align: right
@@ -19,8 +24,26 @@ social: true # includes social icons at the bottom of the page
 projects: true
 ---
 
-Hello! I'm Adithya, a Graduate Research Assistant at the [Human Sensing Lab](http://www.humansensing.cs.cmu.edu/), advised by [Prof. Fernando De la Torre](http://www.cs.cmu.edu/~ftorre/). I'm also a [Master of Science in Computer Vision](https://www.ri.cmu.edu/education/academic-programs/master-of-science-computer-vision/) (MSCV) student at the [Robotics Institute](https://www.ri.cmu.edu/), [Carnegie Mellon University](https://www.cmu.edu/). I completed my undergrad with a major in Electronics and Communication with a minor in Computational Mathematics from Manipal Institute of Technology in 2021. My primary interests lie in Computer Vision, Artificial Intelligence and Computer Graphics.
+I’m Adithya Narayan, a Graduate Research Assistant at the [Human Sensing Lab](http://www.humansensing.cs.cmu.edu/), advised by [Prof. Fernando De la Torre](http://www.cs.cmu.edu/~ftorre/), and an MSCV student at the [Robotics Institute](https://www.ri.cmu.edu/) at [Carnegie Mellon University](https://www.cmu.edu/).
 
-Prior to this, I worked for 3 years as a Machine Learning Engineer/Applied Research Engineer. At [Arintra](https://www.arintra.com/), I utilized LLMs to solve the problem of medical coding. I also worked at [Klothed](https://getklothed.com/), where I had the pleasure of working with [Prof. James O'Brien](http://obrien.berkeley.edu/) on the problem of clothed human mesh recovery. I also explored its applications in virtual tryons during my time here.
+My research interests center around **3D vision** and **geometry-aware learning**—especially multi-view reasoning, robust reconstruction, and understanding how vision(-language) models build 3D scene representations.
 
-During my undergrad, I did my thesis under the supervision of [Dr. Sripad Devalla](https://scholar.google.com.sg/citations?user=J1WuyrYAAAAJ&hl=en) at [Origin Health](https://www.originmedical.ai/), where I worked on the early detection of fetal anatomies from second-trimester ultrasound scans. Prior to this, during my senior year summer, I also worked with [Prof. Sachin Patkar](https://www.ee.iitb.ac.in/wiki/faculty/patkar) at [Indian Institute of Technology, Bombay](https://www.iitb.ac.in/) on a SLAM related project. 
+Currently, I’m exploring:
+- **Multi-view reasoning / view selection** for 2D VLMs, and how 3D understanding emerges (Gaussian Splatting + depth representations; mechanistic interpretability).
+- **Adversarial scene exploration** on SE(3) with ordinal objectives to expose geometry/depth failure modes (CVPR 2026, under review).
+
+Previously, I’ve worked across research engineering and applied ML:
+- **HeyGen (Research Engineering Intern)**: camera-motion conditioned video diffusion (ControlNet), large-scale SfM + pose extraction, and data filtering with flow-based signals.
+- **Arintra (ML Engineer)**: RAG for medical coding, semantic retrieval (SapBERT + Qdrant), and ML deployment/versioning (MLFlow + FastAPI + GCP).
+- **Klothed (ML Engineer)** (Advisor: [Prof. James O'Brien](http://obrien.berkeley.edu/)): 3D human reconstruction and fast FEM-based warping pipelines for AR.
+- **Origin Health (Research Engineer)** (Advisor: Dr. Sripad Devalla): fetal imaging systems (segmentation / measurement), including a co-authored ISBI 2022 paper.
+
+I completed my undergrad at Manipal Institute of Technology (B.Tech ECE) in 2021.
+
+---
+
+## Timeline
+{% include figure.liquid loading="eager" path="assets/img/timeline.png" class="img-fluid" %}
+<div class="caption">
+  My journey so far (research + industry).
+</div>

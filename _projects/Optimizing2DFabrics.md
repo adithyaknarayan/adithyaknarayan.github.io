@@ -4,8 +4,8 @@ title: Optimizing Fabrics in 2D
 description: Leveraging vectorized operations in Numpy to find a quick solution to optical flow systems in 2D.
 img: assets/img/projects/SpringElement/triangulation_vis.png
 img_path: /docs/assets/spring_system
-importance: 3
-category: work
+importance: 4
+category: fun
 selected: true
 link: /blog/2023/Spring-System/
 redirect: /blog/2023/Spring-System/

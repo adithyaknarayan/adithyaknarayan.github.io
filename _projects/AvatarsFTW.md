@@ -6,7 +6,7 @@ abstract: We propose a two-part, inpainting and body fitting pipeline that allev
 img: assets/img/projects/AvatarsFTW/animation1.gif
 redirect: https://www.kaustavmukherjee.com/AvatarsFTWPage/
 importance: 1
-category: work
+category: projects
 selected: true
 github: https://github.com/adithyaknarayan/16-824_F2024_Project
 page: https://www.kaustavmukherjee.com/AvatarsFTWPage/
